@@ -32,3 +32,11 @@ Here is one very important rule: Components never directly manipulate the data s
 We have a third concept here: Actions. Components dispatch actions, meaning that they trigger certain actions. An action is simply a JavaScript object that describes the type of operation that the reducer should perform. Redux forwards the action to the reducer, reads the description of the desired operation, and performs the operation specified by the reducer.
 
 So, components dispatch actions which describe what should be done but don't perform the operation directly. These actions are forwarded to the reducer, which carries out the desired operation and produces a new state that effectively replaces the existing state in the Central Data Store. When the state in that data store is updated, subscribing components are notified so that they can update their UI.
+
+## The Reducer Function:
+
+A reducer function is a standard JavaScript function, but it will be called by the Redux Library and will always receive two parameters: the existing state and the dispatched action.
+
+The reducer function must return a certain output, meaning that it must return a new state object. Therefore, a reducer function should be a pure function, which basically means that the same values for inputs should always produce exactly the same output. Additionally, there should be no side effects inside that function.
+
+!!! A reducer should really just be a function that takes the given input which provided by Redux and then produces the expected output; a new state object.
