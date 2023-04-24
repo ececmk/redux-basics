@@ -40,3 +40,17 @@ A reducer function is a standard JavaScript function, but it will be called by t
 The reducer function must return a certain output, meaning that it must return a new state object. Therefore, a reducer function should be a pure function, which basically means that the same values for inputs should always produce exactly the same output. Additionally, there should be no side effects inside that function.
 
 !!! A reducer should really just be a function that takes the given input which provided by Redux and then produces the expected output; a new state object.
+
+## Methods:
+
+### createStore(reducer, [preloadedState], [enhancer]): 
+This method is used to create a new Redux store. It takes in a reducer function as its first argument, which is responsible for updating the state based on actions dispatched to the store. The preloadedState parameter is optional and allows you to initialize the state of the store. The enhancer parameter is also optional and is used to enhance the store with third-party capabilities, such as middleware.
+
+### getState():
+"getState()" is a method available on the store created with "createStore()". It retrieves the latest snapshot of the state after it has been updated.
+
+### subscribe():
+This method is used to subscribe a listener function to the Redux store. Whenever the state of the store changes, the listener function will be called. This is typically used to update the UI in response to state changes.
+
+### dispatch(action): 
+This method is used to dispatch an action to the Redux store. The action parameter is an object that describes the action to be performed, such as adding an item to a list or updating a user's profile. When an action is dispatched, it is passed to the reducer function, which updates the state of the store accordingly. Once the state is updated, the subscribed listeners are notified and the UI is updated accordingly.
