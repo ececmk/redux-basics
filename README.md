@@ -26,3 +26,9 @@ Redux is all about having one central data (state) store in your application. Th
 Here is one very important rule: Components never directly manipulate the data stored in the store. Instead, we use a concept called reducers. We have to set up a reducer function, which is responsible for mutating the stored data.
 
 !!! "Reducer functions" are a general concept and not a useReducer() hook. Reducer functions are functions that take some input, transform that input, and output a new result.
+
+## How do we connect components and reducer function?
+
+We have a third concept here: Actions. Components dispatch actions, meaning that they trigger certain actions. An action is simply a JavaScript object that describes the type of operation that the reducer should perform. Redux forwards the action to the reducer, reads the description of the desired operation, and performs the operation specified by the reducer.
+
+So, components dispatch actions which describe what should be done but don't perform the operation directly. These actions are forwarded to the reducer, which carries out the desired operation and produces a new state that effectively replaces the existing state in the Central Data Store. When the state in that data store is updated, subscribing components are notified so that they can update their UI.
