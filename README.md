@@ -54,3 +54,11 @@ This method is used to subscribe a listener function to the Redux store. Wheneve
 
 ### dispatch(action): 
 This method is used to dispatch an action to the Redux store. The action parameter is an object that describes the action to be performed, such as adding an item to a list or updating a user's profile. When an action is dispatched, it is passed to the reducer function, which updates the state of the store accordingly. Once the state is updated, the subscribed listeners are notified and the UI is updated accordingly.
+
+## Hooks:
+
+### useSelector(): 
+The useSelector hook is a hook provided by the React-Redux library. It allows you to extract data from the Redux store state, without needing to subscribe to the store. It takes a single argument, a selector function, which is called with the entire Redux store state and returns the specific data you want from the state.
+
+### useDispatch(): 
+The useDispatch hook is another hook provided by the React-Redux library. It allows you to dispatch actions to the Redux store from within a React component. It returns a reference to the dispatch function provided by the Redux store.
